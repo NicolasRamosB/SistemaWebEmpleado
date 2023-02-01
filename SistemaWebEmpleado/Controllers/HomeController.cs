@@ -8,7 +8,7 @@ namespace SistemaWebEmpleado.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Nombre = "Bienvenido al sistema de Empleados";
+            ViewBag.Nombre = "Home Empleados";
             return View("Index");
         }
     }

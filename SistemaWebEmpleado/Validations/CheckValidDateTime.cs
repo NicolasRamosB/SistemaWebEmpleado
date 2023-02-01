@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace OperaWebSitee.Validations
 {
@@ -10,8 +11,10 @@ namespace OperaWebSitee.Validations
         }
         public override bool IsValid(object value)
         {
-            int year = (int)value;
-            if (year <= 2000)
+            DateTime fecha = (DateTime)value;
+            int year = fecha.Year;
+
+            if (year < 2000)
             {
                 return false;
 

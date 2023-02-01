@@ -1,0 +1,28 @@
+﻿
+@model SistemaWebEmpleado.Models.Empleado
+
+@{
+    ViewData["Title"] = "Delete Aula";
+}
+        <h2>
+            Nombre: @Model.Nombre @Model.Apellido
+        </h2>
+
+        <p>
+            Desea eliminar este Empleado?
+        </p>
+
+@using (Html.BeginForm("Delete", "Empleado", FormMethod.Post))
+{
+
+            <input type="submit" action="Delete" value="Delete"/>
+
+}
+
+@section SideBar{
+        <div class="side-views">
+             <h1>Administacion de Empleados</h1>
+                 <h2>Eliminar Empleado</h2>
+                 </div>
+
+}

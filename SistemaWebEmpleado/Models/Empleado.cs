@@ -30,7 +30,9 @@ namespace SistemaWebEmpleado.Models
 
         [Required(ErrorMessage = "Debe ingresar el Fecha")]
         [CheckValidDateTime]
-        public DateTime ? FechaNacimiento { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true,
+            DataFormatString = "{0:dd/mm/yyyy}")]
+        public DateTime  FechaNacimiento { get; set; }
 
         [Column(TypeName = "varchar(50)")]
         [Required(ErrorMessage = "Debe ingresar el Legajo")]

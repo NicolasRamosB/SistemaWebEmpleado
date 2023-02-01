@@ -20,6 +20,17 @@ namespace SistemaWebEmpleado.Controllers
             var empleado = context.Empleados.ToList();
             return View(empleado);
         }
+
+
+        [HttpGet]
+        public IActionResult IndexByTitle(string titulo)
+        {
+            var empleados = (from e in context.Empleados
+                             where e.Titulo == titulo
+                             select e).ToList();
+            return View("Index", empleados);
+        }
+
         [HttpGet]
         public ActionResult Create()
         {

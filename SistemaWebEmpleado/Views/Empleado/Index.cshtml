@@ -3,45 +3,61 @@
 @{
     ViewData["Title"] = "Index";
 }
-@Html.ActionLink("Nuevo","Create","Empleado")
-    <table>
-        <tr>
-            <th asp-for ="Nombre"></th>
-            <th asp-for ="Apellido"></th>
-            <th asp-for ="DNI"th>
-            <th asp-for ="Legajo"th>
-            <th asp-for ="FechaNacimiento"th>
-            <th asp-for ="Titulo"th>
 
-            <th></th>
+@Html.ActionLink("Nuevo","Create","Empleado")
+<div>
+    <table class="table table-primary">
+
+        <tr>
+
+        
+        <th scope="col">@Html.DisplayNameFor(e=> e.Nombre)</th>
+        <th scope="col">@Html.DisplayNameFor(e=> e.Apellido)</t>
+        <th scope="col">@Html.DisplayNameFor(e=> e.DNI)</th>
+        <th scope="col">@Html.DisplayNameFor(e=> e.Legajo)</th>
+        <th scope="col">@Html.DisplayNameFor(e=> e.FechaNacimiento)</th>
+        <th scope="col">@Html.DisplayNameFor(e=> e.Titulo)</th>
+
+        <th scope="col">Acciones</th>
         </tr>
     @foreach (var item in Model)
     {
-                <tr>
+          <tr>
                 <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
+                    @Html.DisplayFor(empleado => item.Nombre)
                 </td>
+
                 <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
+                @Html.DisplayFor(empleado => item.Apellido)
                 </td>
+
                 <td>
-                @Html.DisplayFor(modelItem => item.DNI)
+                @Html.DisplayFor(empleado => item.DNI)
                 </td>
+
                 <td>
-                @Html.DisplayFor(modelItem => item.Legajo)
+                @Html.DisplayFor(empleado => item.Legajo)
                 </td>
+
                 <td>
-                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                @Html.DisplayFor(empleado => item.FechaNacimiento, "{0:dd/mm/yyyy}")
                 </td>
+
                 <td>
-                @Html.DisplayFor(modelItem => item.Titulo)
+                @Html.ActionLink(item.Titulo, "IndexByTitle", "Empleado", new{titulo = item.Titulo})
                 </td>
+
                 <td>
                 @Html.ActionLink("Detalle","Details", "Empleado", new{id=item.Id})
                 @Html.ActionLink("Eliminar","Delete", "Empleado", new{id=item.Id})
                 @Html.ActionLink("Editar","Edit", "Empleado", new{id=item.Id})
-
                 <td/>
-                </tr>
+          </tr>
     }
     </table>
+    </div>
+@section SideBar{
+        <div class="side-home">
+         <h1>Administacion de Empleados</h1>
+         </div>
+}

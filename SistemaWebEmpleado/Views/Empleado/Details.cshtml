@@ -1,0 +1,51 @@
+﻿@model SistemaWebEmpleado.Models.Empleado
+
+@{
+    ViewData["Title"] = $"{Model.Nombre} {Model.Apellido}";
+}
+
+    <div>
+
+        <h1>
+
+        @Html.DisplayNameFor(model=>model.Nombre):
+        @Html.DisplayFor(model=>model.Nombre)
+        @Html.DisplayFor(model=>model.Apellido)
+        </h1>
+
+        <p>
+
+        @Html.DisplayNameFor(model=>model.DNI)
+        @Html.DisplayFor(model=>model.DNI)
+
+        </p>
+        <p>
+
+        @Html.DisplayNameFor(model=>model.Legajo)
+        @Html.DisplayFor(model=>model.Legajo)
+
+        </p>
+        <p>
+
+        @Html.DisplayNameFor(model=>model.FechaNacimiento)
+        @Html.DisplayFor(model=>model.FechaNacimiento)
+
+        </p>
+        <p>
+
+        @Html.DisplayNameFor(model=>model.Titulo)
+        @Html.DisplayFor(model=>model.Titulo)
+
+        </p>
+
+    @Html.ActionLink("Volver al index", "")
+
+    </div>
+
+@section SideBar{
+        <div class="side-views">
+             <h1>Administacion de Empleados</h1>
+                 <h2>Detalle del Empleado</h2>
+        </div>
+
+}

@@ -3,34 +3,44 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <title>@ViewBag.Title</title>
     
 
 </head>
 <body>
-      <div id="sidebar">
+ 
+    <header class="header bg-primary">
+        <h1>SISTEMA Empleado</h1>
+    </header>
+
+    <div id="sidebar">
         @if (IsSectionDefined("SideBar"))
         {
             @RenderSection("SideBar")
         }
         else
         {
-            <h2>Zona Sidebar Fija</h2>
+             <h2>Error al cargar el Side</h2>
         }
     </div>
-    <div id="header">
-        <h1>Sistemas de Empleados</h1>
-    </div>
-    <div id="menu">
-        @Html.ActionLink("Home","Index","Home")
-        @Html.ActionLink("Empleado","Index","Empleado")
-    </div>
+
+    <nav class="nav bg-success">
+        @Html.ActionLink("Home","Index","Home", new{@class="textNav"}) 
+        @Html.ActionLink("Empleado","Index","Empleado", new{@class="textNav"})
+    </nav>
   
+    <main>
+    
     <div id="content">
         @RenderBody()
     </div>
-    <div id="footer">
+    </main>
+
+    <footer class="footer">
         <p>info@Empleado.com</p>
-    </div>
+    </footer>
+
 </body>
 </html>
