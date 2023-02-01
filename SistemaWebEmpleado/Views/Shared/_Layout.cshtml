@@ -8,6 +8,16 @@
 
 </head>
 <body>
+      <div id="sidebar">
+        @if (IsSectionDefined("SideBar"))
+        {
+            @RenderSection("SideBar")
+        }
+        else
+        {
+            <h2>Zona Sidebar Fija</h2>
+        }
+    </div>
     <div id="header">
         <h1>Sistemas de Empleados</h1>
     </div>
@@ -15,21 +25,12 @@
         @Html.ActionLink("Home","Index","Home")
         @Html.ActionLink("Empleado","Index","Empleado")
     </div>
-    <div id="sidebar">
-        @if (IsSectionDefined("SideBar"))
-        {
-            @RenderSection("SideBar")
-        }
-        else
-        {
-                <h2>Zona Sidebar Fija</h2>
-        }
-    </div>
+  
     <div id="content">
         @RenderBody()
     </div>
     <div id="footer">
-        <p>info@Opera.com</p>
+        <p>info@Empleado.com</p>
     </div>
 </body>
 </html>

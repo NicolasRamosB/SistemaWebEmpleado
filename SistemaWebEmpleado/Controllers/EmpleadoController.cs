@@ -17,15 +17,15 @@ namespace SistemaWebEmpleado.Controllers
 
         public IActionResult Index()
         {
-            var medico = context.Empleados.ToList();
-            return View(medico);
+            var empleado = context.Empleados.ToList();
+            return View(empleado);
         }
         [HttpGet]
         public ActionResult Create()
         {
             Empleado empleado = new Empleado();
 
-            return View("Register", empleado);
+            return View("Create", empleado);
         }
 
         //post: Opera/Create
